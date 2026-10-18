@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>kemmy-du · 个人主页</title>
+  <meta name="description" content="kemmy-du 的个人主页 — 量化交易 · AI 工程 · 开源项目">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">kemmy-du</a>
+      <nav>
+        <a href="#about">关于</a>
+        <a href="#projects">项目</a>
+        <a href="https://github.com/kemmy-du" target="_blank" rel="noopener">GitHub ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <p class="hero-kicker">HELLO, WORLD 👋</p>
+      <h1>我是 <span class="accent">kemmy-du</span><br>一名热爱工程的开发者</h1>
+      <p class="hero-sub">
+        专注于量化交易系统、AI 工程与自动化工具链。<br>
+        相信代码的力量，喜欢把重复的事情交给机器。
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects">查看项目</a>
+        <a class="btn btn-ghost" href="https://github.com/kemmy-du" target="_blank" rel="noopener">GitHub 主页</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" data-count="2">0</span><span class="stat-label">开源项目</span></div>
+        <div class="stat"><span class="stat-num" data-count="5">0</span><span class="stat-label">个仓库</span></div>
+        <div class="stat"><span class="stat-num" data-count="100">0</span><span class="stat-label">% 热情</span></div>
+      </div>
+    </section>
+
+    <section id="about" class="section container">
+      <h2 class="section-title"><span class="title-no">01</span>关于我</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            日常活跃在 <strong>Python / Go / TypeScript</strong> 技术栈，对金融市场与工程自动化有浓厚兴趣。
+            正在构建一套完整的量化交易基础设施，包括策略引擎、任务调度、多券商交易接口与消息通知系统。
+          </p>
+          <p>
+            工作之外，我喜欢折腾开发工具链、设计 Agent Skills，以及研究如何让 AI 更好地辅助编程。
+          </p>
+        </div>
+        <div class="skill-card">
+          <h3>技术标签</h3>
+          <ul class="tag-list">
+            <li>Python</li><li>Go</li><li>TypeScript</li>
+            <li>量化交易</li><li>AIOps</li><li>任务调度</li>
+            <li>LLM Agent</li><li>自动化</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section container">
+      <h2 class="section-title"><span class="title-no">02</span>开源项目</h2>
+      <div class="project-grid">
+        <a class="project-card" href="https://github.com/kemmy-du/qclaw" target="_blank" rel="noopener">
+          <div class="project-head">
+            <span class="project-icon">📦</span>
+            <h3>qclaw</h3>
+          </div>
+          <p>Python 项目，聚焦量化与自动化方向的工程实践。</p>
+          <div class="project-meta">
+            <span class="lang-dot python"></span>Python
+          </div>
+        </a>
+        <a class="project-card" href="https://github.com/kemmy-du/aiops" target="_blank" rel="noopener">
+          <div class="project-head">
+            <span class="project-icon">⚙️</span>
+            <h3>aiops</h3>
+          </div>
+          <p>智能运维相关实验项目，探索自动化与可观测性。</p>
+          <div class="project-meta">
+            <span class="repo-badge">Public</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 kemmy-du · Built with ❤️ &amp; GitHub Pages</p>
+      <a href="https://github.com/kemmy-du" target="_blank" rel="noopener">github.com/kemmy-du ↗</a>
+    </div>
+  </footer>
+
+  <script>
+    // 数字滚动动画
+    document.querySelectorAll('.stat-num').forEach(el => {
+      const target = +el.dataset.count;
+      const step = Math.max(1, Math.round(target / 40));
+      let cur = 0;
+      const timer = setInterval(() => {
+        cur += step;
+        if (cur >= target) { cur = target; clearInterval(timer); }
+        el.textContent = cur;
+      }, 30);
+    });
+  </script>
+</body>
+</html>
